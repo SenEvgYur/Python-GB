@@ -6,9 +6,9 @@ while ((q < 1) or (q > 4)):
      q = int(input('Введите номер четверти: '))
 if q == 1:
      print('x > 0  и  y > 0')
-if q == 2:
+elif q == 2:
      print('x < 0  и  y > 0')
-if q == 3:
+elif q == 3:
      print('x < 0  и  y < 0')
-if q == 4:
+elif q == 4:
      print('x > 0  и  y < 0')
