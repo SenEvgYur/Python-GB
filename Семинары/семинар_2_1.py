@@ -1,4 +1,5 @@
-# 1. Напишите программу, которая принимает на вход число N и выдаёт последовательность из N членов.
+# 1. Напишите программу, которая принимает на 
+# вход число N и выдаёт последовательность из N членов.
     
 #     *Пример:*
     
@@ -27,11 +28,11 @@
 #         print(f"{prod} ", end = '')
 # returnSequence(int(input("Please, input number "))
 
-# def print_numbers(x):
-#     vivod = 1
-#     for i in range(x):
-#         print(vivod)
-#         vivod = vivod * -3
+def print_numbers(x):
+    vivod = 1
+    for i in range(x):
+        print(vivod)
+        vivod = vivod * -3
 # n = int(input())
 # print_numbers(n)
 
@@ -44,7 +45,8 @@
 # PyCharm: https://www.jetbrains.com/ru-ru/pycharm/
 # Дзен Python: https://tyapk.ru/blog/post/the-zen-of-python
 
-#Напишите программу, в которой пользователь будет задавать две строки, 
+# Напишите программу, в которой пользователь будет 
+# задавать две строки
 
 # str1 = "абракбадабра"
 # str2 = "а"
