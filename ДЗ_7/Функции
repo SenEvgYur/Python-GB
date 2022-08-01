@@ -1,0 +1,13 @@
+from phonebook import contacts
+
+def user_id(x):    # печать user_id
+    for i in x: 
+        print(i)
+
+# def (contacts):    # 
+#     for i in contacts: 
+#         print(i)
+
+# for i in contacts:
+#     print(i)
+user_id(contacts)
