@@ -22,6 +22,13 @@ def user_id_if(text):   # печать ФИО по указанным буква
             print('\nФИО: ', i)
 
 
+def correction_id(text):
+    for i in contacts:
+        if text in i:
+            print('\nНапишите новое ФИО:\n')
+            i = input()
+
+
 def phone_all():       # печать ФИО и телефонов всего справочника
     persons = []
     for i in contacts:
@@ -39,6 +46,17 @@ def phone_if(text):       # печать ФИО и телефона по ука�
     for person in persons:
         print('\nФИО: ', person, '       Номер телефона: ',
               contacts[person]['Телефон'])
+
+
+def correction_phone(text):
+    persons = []
+    for i in contacts:
+        if text in i:
+            persons.append(i)
+            print('\nНапишите новый телефон:\n')
+            i = input()
+    for person in persons:
+        contacts[person]['Телефон'] = i
 
 
 def birthday_all():         # печать ФИО и Даты рождения всего справочника
@@ -60,15 +78,34 @@ def birthday_if(text):         # печать ФИО и Даты рождени�
               contacts[person]['Дата рождения'])
 
 
+# def add_to_fail():    # запись в файл
+#     global contacts
+#     persons = []
+#     for i in contacts:
+#             persons.append(i)        
+#     for person in persons:
+#         dozapis(person)
+#         for data in contacts[person]:
+#             dozapis(contacts[person][data])
+
+
+# def dozapis(x):
+#     my_path_a = r'ДЗ_7\my_phonebook.txt'
+#     with open(my_path_a, 'a') as f:
+#         my_notebook_a = f.write(x)
+
+
 def main_screen():    # запуск программы с выбором 
     print(
         '\nВыберите интересующий пункт меню: \n'
-        '3. Проcмотр информации'
+        '1. Проcмотр информации\n'
+        '2. Исправление информации\n'
+        '3. Запись новой информации'
     )
     x = int(input())
     while x < 1 or x > 3:
         x = int(input())
-    if x == 3:
+    if x == 1:
         print(
         '\nВыберите интересующий пункт меню: \n'
         '1. Проcмотр всеx контактов \n'
@@ -107,6 +144,37 @@ def main_screen():    # запуск программы с выбором
                 phone_if(my_text)
             else: 
                 birthday_if(my_text)
+    if x == 2:
+        print('\nВведите буквы контакта, который ищите: ')
+        my_text = input()
+        user_id_if(my_text)
+        print(
+            '\nВыберите, что хотите исправить:\n'
+            '1. ФИО\n'
+            '2. телефон\n'
+            '3. день рождения\n'
+            '4. всю информацию'
+            )
+        x = int(input())
+        while x < 1 or x > 4:
+            x = int(input())
+        if x == 1:
+            correction_id()
+        if x == 2:
+
     print()
 
-main_screen()
+
+
+# my_path_a = r'ДЗ_7\my_phonebook.txt'
+# with open(my_path_a, 'a') as f:
+#     my_notebook_a = f.write()
+
+
+# my_path_w = r'ДЗ_7\my_phonebook.txt'
+# with open(my_path_w, 'w') as f:
+#     my_notebook_w = f.write()
+
+# my_path_r = r'ДЗ_7\my_phonebook.txt'
+# with open(my_path_r, 'r') as f:
+#     my_notebook_r = f.read()
