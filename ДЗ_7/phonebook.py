@@ -10,6 +10,7 @@ contacts = {
 }
 
 
+
 def user_id():    # печать ФИО всего справочника
     global contacts
     for i in contacts:
@@ -22,12 +23,18 @@ def user_id_if(text):   # печать ФИО по указанным буква
             print('\nФИО: ', i)
 
 
-def correction_id(text):
+def correction_id(my_text):  # корректировка ФИО
     for i in contacts:
-        if text in i:
-            print('\nНапишите новое ФИО:\n')
+        if my_text in i:
             i = input()
 
+
+def add_id():
+    my_str = input('\nВведите ФИО\n')
+    contacts[my_str] = {}
+    contacts[my_str]['Телефон'] = input('\nВведите телефон\n')
+    contacts[my_str]['Дата рождения'] = input('\nВведите дату рождения\n')
+    
 
 def phone_all():       # печать ФИО и телефонов всего справочника
     persons = []
@@ -48,12 +55,11 @@ def phone_if(text):       # печать ФИО и телефона по ука�
               contacts[person]['Телефон'])
 
 
-def correction_phone(text):
+def correction_phone(text):       # корректировка телефона
     persons = []
     for i in contacts:
         if text in i:
             persons.append(i)
-            print('\nНапишите новый телефон:\n')
             i = input()
     for person in persons:
         contacts[person]['Телефон'] = i
@@ -78,6 +84,17 @@ def birthday_if(text):         # печать ФИО и Даты рождени�
               contacts[person]['Дата рождения'])
 
 
+def correction_birthday(text):       # корректировка дня рождения
+    persons = []
+    for i in contacts:
+        if text in i:
+            persons.append(i)
+            print('\nНапишите новую дату рождения:\n')
+            i = input()
+    for person in persons:
+        contacts[person]['Дата рождения'] = i
+
+
 # def add_to_fail():    # запись в файл
 #     global contacts
 #     persons = []
@@ -94,6 +111,19 @@ def birthday_if(text):         # печать ФИО и Даты рождени�
 #     with open(my_path_a, 'a') as f:
 #         my_notebook_a = f.write(x)
 
+
+def end_menu():
+    print(
+        '\nХотите ли продолжить ?\n'
+        '1. Да\n'
+        '2. Нет\n'
+    )
+    x = int(input())
+    if x == 1:
+        main_screen()
+    else:
+        print('\nДо новых встреч !')
+    
 
 def main_screen():    # запуск программы с выбором 
     print(
@@ -159,11 +189,19 @@ def main_screen():    # запуск программы с выбором
         while x < 1 or x > 4:
             x = int(input())
         if x == 1:
-            correction_id()
-        if x == 2:
-
+            correction_id(my_text)
+        elif x == 2:
+            correction_phone(my_text)
+        elif x == 3:
+            correction_birthday(my_text)
+        else:
+            correction_id(my_text)
+            correction_phone(my_text)
+            correction_birthday(my_text)
+    if x == 3:
+        add_id()   
+    end_menu()
     print()
-
 
 
 # my_path_a = r'ДЗ_7\my_phonebook.txt'
