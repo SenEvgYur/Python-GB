@@ -1,0 +1,310 @@
+contacts = {
+    "Александров Александр": {'Телефон': '+7111111111', 'Дата рождения': '01.01.1998', 'Должность': 'менеджер', 'Город': 'Ростов-на-Дону'},
+    "Борисов Борис Борисович": {'Телефон': '+7222222222', 'Дата рождения': '02.02.2000', 'Должность': 'бухгалтер', 'Город': 'Грозный'},
+    "Владимиров Владимир Владимирович": {'Телефон': '+7333333333', 'Дата рождения': '03.03.1980', 'Должность': 'менеджер', 'Город': 'Калининград'},
+    "Денисов Денис Денисович": {'Телефон': '+7444444444', 'Дата рождения': '04.04.1993', 'Должность': 'директор', 'Город': 'Томск'},
+    "Галкин Алексей Алексеевич": {'Телефон': '+7555555555', 'Дата рождения': '05.05.1990', 'Должность': 'менеджер', 'Город': 'Хабаровск'},
+    "Егоров Егор Егорович": {'Телефон': '+7666666666', 'Дата рождения': '06.06.2003', 'Должность': 'юрист', 'Город': 'Чита'},
+    "Жамнова Жанна Егоровна": {'Телефон': '+7777777777', 'Дата рождения': '07.07.2001', 'Должность': 'бухгалтер', 'Город': 'Новосибирск'},
+    "Зумин Евгений Федорович": {'Телефон': '+7888888888', 'Дата рождения': '08.08.1995', 'Должность': 'менеджер', 'Город': 'Москва'},
+}
+
+
+
+def user_id():    # печать ФИО всего справочника
+    global contacts
+    for i in contacts:
+        print('\nФИО: ', i)
+
+
+def user_id_if(text):   # печать ФИО по указанным буквам
+    for i in contacts:
+        if text in i:
+            print('\nФИО: ', i)
+
+
+def correction_id(my_text):  # корректировка ФИО
+    for i in contacts:
+        if my_text in i:
+            i = input()
+
+
+def add_id():
+    my_str = input('\nВведите ФИО\n')
+    contacts[my_str] = {}
+    contacts[my_str]['Телефон'] = input('\nВведите телефон\n')
+    contacts[my_str]['Дата рождения'] = input('\nВведите дату рождения\n')
+    contacts[my_str]['Должность'] = input('\nВведите должность\n')
+    contacts[my_str]['Город'] = input('\nВведите дату рождения\n')
+
+
+def phone_all():       # печать ФИО и телефонов всего справочника
+    persons = []
+    for i in contacts:
+        persons.append(i)
+    for person in persons:
+        print('\nФИО: ', person, '       Номер телефона: ',
+              contacts[person]['Телефон'])
+
+
+def phone_all():       # печать ФИО и телефонов всего справочника
+    persons = []
+    for i in contacts:
+        persons.append(i)
+    for person in persons:
+        print('\nФИО: ', person, '       Номер телефона: ',
+              contacts[person]['Телефон'])
+
+
+def phone_if(text):       # печать ФИО и телефона по указанным буквам
+    persons = []
+    for i in contacts:
+        if text in i:
+            persons.append(i)
+    for person in persons:
+        print('\nФИО: ', person, '       Номер телефона: ',
+              contacts[person]['Телефон'])
+
+
+def correction_phone(text):       # корректировка телефона
+    persons = []
+    for i in contacts:
+        if text in i:
+            persons.append(i)
+            i = input()
+    for person in persons:
+        contacts[person]['Телефон'] = i
+
+
+def birthday_all():         # печать ФИО и Даты рождения всего справочника
+    persons = []
+    for i in contacts:
+        persons.append(i)
+    for person in persons:
+        print('\nФИО: ', person, '     День рождения: ',
+              contacts[person]['Дата рождения'])
+
+
+def birthday_if(text):         # печать ФИО и Даты рождения по указанным буквам
+    persons = []
+    for i in contacts:
+        if text in i:
+            persons.append(i)
+    for person in persons:
+        print('\nФИО: ', person, '     День рождения: ',
+              contacts[person]['Дата рождения'])
+
+
+def correction_birthday(text):       # корректировка дня рождения
+    persons = []
+    for i in contacts:
+        if text in i:
+            persons.append(i)
+            print('\nНапишите новую дату рождения:\n')
+            i = input()
+    for person in persons:
+        contacts[person]['Дата рождения'] = i
+
+
+def post_all():         # печать ФИО и Должности всего справочника
+    persons = []
+    for i in contacts:
+        persons.append(i)
+    for person in persons:
+        print('\nФИО: ', person, '     Должность: ',
+              contacts[person]['Должность'])
+
+
+def post_if(text):         # печать ФИО и Должности по указанным буквам
+    persons = []
+    for i in contacts:
+        if text in i:
+            persons.append(i)
+    for person in persons:
+        print('\nФИО: ', person, '     Должность: ',
+              contacts[person]['Должность'])
+
+
+def correction_post(text):       # корректировка Должности
+    persons = []
+    for i in contacts:
+        if text in i:
+            persons.append(i)
+            print('\nНапишите новую должность:\n')
+            i = input()
+    for person in persons:
+        contacts[person]['Должность'] = i
+
+
+def city_all():         # печать ФИО и Города всего справочника
+    persons = []
+    for i in contacts:
+        persons.append(i)
+    for person in persons:
+        print('\nФИО: ', person, '     Город: ',
+              contacts[person]['Город'])
+
+
+def city_if(text):         # печать ФИО и Города по указанным буквам
+    persons = []
+    for i in contacts:
+        if text in i:
+            persons.append(i)
+    for person in persons:
+        print('\nФИО: ', person, '     Город: ',
+              contacts[person]['Город'])
+
+
+def correction_city(text):       # корректировка Города
+    persons = []
+    for i in contacts:
+        if text in i:
+            persons.append(i)
+            print('\nНапишите новый город:\n')
+            i = input()
+    for person in persons:
+        contacts[person]['Город'] = i
+
+
+
+# def add_to_fail():    # запись в файл
+#     global contacts
+#     persons = []
+#     for i in contacts:
+#             persons.append(i)        
+#     for person in persons:
+#         dozapis(person)
+#         for data in contacts[person]:
+#             dozapis(contacts[person][data])
+
+
+# def dozapis(x):
+#     my_path_a = r'ДЗ_7\my_phonebook.txt'
+#     with open(my_path_a, 'a') as f:
+#         my_notebook_a = f.write(x)
+
+
+def end_menu():
+    print(
+        '\nХотите ли продолжить ?\n'
+        '1. Да\n'
+        '2. Нет\n'
+    )
+    x = int(input())
+    if x == 1:
+        main_screen()
+    else:
+        print('\nДо новых встреч !')
+    
+
+def main_screen():    # запуск программы с выбором 
+    print(
+        '\nВыберите интересующий пункт меню: \n'
+        '1. Проcмотр информации\n'
+        '2. Исправление информации\n'
+        '3. Запись новой информации'
+    )
+    x = int(input())
+    while x < 1 or x > 3:
+        x = int(input())
+    if x == 1:
+        print(
+        '\nВыберите интересующий пункт меню: \n'
+        '1. Проcмотр всеx контактов \n'
+        '2. Поиск контакта'
+        )
+        x = int(input())
+        while x < 1 or x > 2:
+            x = int(input())
+        if x == 1:
+            user_id()
+            print(
+                '\nЕсли хотите увидеть записанную информацию \n'
+                '1. телефоны \n'
+                '2. дни рождения\n'
+                '3. должность\n'
+                '4. город\n'
+                )
+            x = int(input())
+            while x < 1 or x > 4:
+                x = int(input())
+            if x == 1: 
+                phone_all()
+            elif x == 2:
+                birthday_all()
+            elif x == 3:
+                post_all()
+            else:
+                city_all
+        if x == 2:
+            print('\nВведите буквы контакта, который ищите: ')
+            my_text = input()
+            user_id_if(my_text)
+            print(
+                '\nЕсли хотите увидеть записанную информацию \n'
+                '1. телефоны \n'
+                '2. дни рождения\n'
+                '3. должность\n'
+                '4. город\n'
+            )
+            x = int(input())
+            while x < 1 or x > 2:
+                x = int(input())
+            if x == 1: 
+                phone_if(my_text)
+            elif x == 2:
+                birthday_if(my_text)
+            elif x == 3:
+                post_if(my_text)
+            else:
+                city_if(my_text) 
+    if x == 2:
+        print('\nВведите буквы контакта, который ищите: ')
+        my_text = input()
+        user_id_if(my_text)
+        print(
+            '\nВыберите, что хотите исправить:\n'
+            '1. ФИО\n'
+            '2. телефон\n'
+            '3. день рождения\n'
+            '4. должность\n'
+            '5. город\n'
+            '6. всю информацию'
+            )
+        x = int(input())
+        while x < 1 or x > 6:
+            x = int(input())
+        if x == 1:
+            correction_id(my_text)
+        elif x == 2:
+            correction_phone(my_text)
+        elif x == 3:
+            correction_birthday(my_text)
+        elif x == 4:
+            correction_post(my_text)
+        elif x == 5:
+            correction_city(my_text)
+        else:
+            correction_id(my_text)
+            correction_phone(my_text)
+            correction_birthday(my_text)
+            correction_post(my_text)
+            correction_city(my_text)
+    if x == 3:
+        add_id()   
+    end_menu()
+    print()
+
+
+# my_path_a = r'ДЗ_7\my_phonebook.txt'
+# with open(my_path_a, 'a') as f:
+#     my_notebook_a = f.write()
+
+
+# my_path_w = r'ДЗ_7\my_phonebook.txt'
+# with open(my_path_w, 'w') as f:
+#     my_notebook_w = f.write()
+
+# my_path_r = r'ДЗ_7\my_phonebook.txt'
+# with open(my_path_r, 'r') as f:
+#     my_notebook_r = f.read()
