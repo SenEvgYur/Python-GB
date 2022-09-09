@@ -1,25 +1,25 @@
-# Создаём калькулятор
+# Калькулятор для пользователя с интерфейсом
 
 import tkinter as tk
 
 
 def add_number(number):
     value = calc.get()
-    if value[0]=='0' and len(value)==1:
+    if value[0] == '0':  # and len(value) == 1
         value = value[1:]
     calc.delete(0, tk.END)
-    calc.insert(0, value+number)
+    calc.insert(0, value + number)
 
 
 def add_operation(operation):
     value = calc.get()
-    if value [-1] in '+-/*':
-        value = value [:-1]
-    elif '+' in value or '-' in value or '/' in value or '*' in value:
-        calculate()
-        value = calc.get()
+    if value[-1] in '+-/*':
+        value = value[:-1]
+    # elif '+' in value or '-' in value or '/' in value or '*' in value:
+    #     calculate()
+    #     value = calc.get()
     calc.delete(0, tk.END)
-    calc.insert(0, value+operation)
+    calc.insert(0, value + operation)
 
 
 def make_number_button(number):
@@ -40,14 +40,14 @@ def make_operation_button(operation):
 def calculate():
     value = calc.get()
     if value[-1] in '+-*/':
-        value = value+value[:-1]
+        value = value + value[:-1]
     calc.delete(0, tk.END)
     calc.insert(0, eval(value))
 
 
 def clear():
     calc.delete(0, tk.END)
-    calc.insert(0, 0)   
+    calc.insert(0, 0)
 
 
 def make_calc_button(operation):
@@ -55,7 +55,7 @@ def make_calc_button(operation):
                      bd=5,
                      font=('Arial', 13),
                      fg='red',
-                     command=clear)
+                     command=calculate)
 
 
 def make_clear_button(operation):
@@ -63,8 +63,7 @@ def make_clear_button(operation):
                      bd=5,
                      font=('Arial', 13),
                      fg='red',
-                     command=calculate)
-
+                     command=clear)
 
 
 win = tk.Tk()
