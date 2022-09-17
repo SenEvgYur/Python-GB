@@ -5,22 +5,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Скилы для резюме</title>
 </head>
 
 <body>
     <?php
-    $skills = [
-        'Excel' => 70,
-        '1C' => 65,
-        'Word' => 55,
-        'Adobe Photoshop' => 50,
-    ];
-    ?>
-    <?php foreach ($skills as $skillName => $skillValue): ?>
-        <p></p>
-    <?php endforeach; ?>
-    echo $skills
+    $skills = array('Excel' => 70,
+        "1С" => 65, 'Word' => 55,
+        'Adobe Photoshop' => 20,
+    );
+    foreach( $skills as $key => $value ){
+        echo $key."\t=>\t".$value."\n";
+    }
+    ?>     
 </body>
 
 </html>
